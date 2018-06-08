@@ -10,15 +10,10 @@ import UIKit
 
 class InstructionsCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet var cocktailInstruction : UILabel!
+    
+    func configure( cocktail : Cocktail ){
+        cocktailInstruction.text = cocktail.instructions
     }
 
 }

@@ -7,18 +7,16 @@
 //
 
 import UIKit
-
+import SDWebImage
 class HeaderCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet var cocktailLabel : UILabel!
+    @IBOutlet var cocktailImage : UIImageView!
+    @IBOutlet var cocktailGlass : UILabel!
+    
+    func configure( cocktail : Cocktail ){
+        cocktailLabel.text = cocktail.name
+        cocktailImage.sd_setImage( with: URL(string: cocktail.url) )
+        cocktailGlass.text = cocktail.glassType
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

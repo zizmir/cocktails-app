@@ -9,16 +9,13 @@
 import UIKit
 
 class IngredientsCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBOutlet var cocktailIngredients : UILabel!
+    @IBOutlet var cocktailMeasure : UILabel!
+    
+    func configure( _ ingredients : (String, String) ){
+        cocktailIngredients.text = ingredients.0
+        cocktailMeasure.text = ingredients.1
     }
 
 }
